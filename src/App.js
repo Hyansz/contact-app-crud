@@ -43,7 +43,7 @@ function App() {
       return false
     }
 
-    if (formData.name === "") {
+    if (formData.telp === "") {
       return false
     }
 
@@ -52,13 +52,13 @@ function App() {
         if (contact.id === isUpdate.id) {
           contact.name = formData.name
           contact.telp = formData.telp
-        } else {
-          let toSave = {
-            id: uid(), name: formData.name, telp: formData.telp
-          }
-          data.push(toSave)
-        }
+        } 
       })
+    } else {
+      let toSave = {
+        id: uid(), name: formData.name, telp: formData.telp
+      }
+      data.push(toSave)
     }
 
     setContacts(data)
